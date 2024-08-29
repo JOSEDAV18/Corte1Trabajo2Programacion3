@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Vocal</title>
+    <script>
+        function verificarVocal() {
+            // Solicitar al usuario que ingrese una letra
+            var letra = prompt("Letra:");
+            
+            // Verificar que la entrada sea válida (un solo carácter)
+            while (letra === null || letra.length !== 1) {
+                letra = prompt("Entrada no válida. Por favor, ingresa una sola letra:");
+            }
+
+            // Convertir la letra a minúscula para la comparación
+            var letraMinusc = letra.toLowerCase();
+
+            // Verificar si la letra es una vocal
+            var esVocal = (letraMinusc === 'a' || letraMinusc === 'e' || letraMinusc === 'i' || letraMinusc === 'o' || letraMinusc === 'u');
+
+            // Mostrar el resultado en pantalla
+            if (esVocal) {
+                alert("Es vocal");
+            } else {
+                alert("No es vocal");
+            }
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = verificarVocal;
+    </script>
+</head>
+<body>
+</body>
+</html>

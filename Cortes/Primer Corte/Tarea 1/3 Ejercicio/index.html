@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Suma y Multiplicación</title>
+    <script>
+        function realizarOperaciones() {
+            // Solicitar el primer número al usuario
+            var numero1 = parseFloat(prompt("Ingresá un número:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(numero1)) {
+                numero1 = parseFloat(prompt("Entrada no válida. Por favor, ingresa un número:"));
+            }
+
+            // Solicitar el segundo número al usuario
+            var numero2 = parseFloat(prompt("Ingresá otro número:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(numero2)) {
+                numero2 = parseFloat(prompt("Entrada no válida. Por favor, ingresa otro número:"));
+            }
+
+            // Calcular la suma de los dos primeros números
+            var suma = numero1 + numero2;
+            
+            // Mostrar el resultado de la suma en pantalla
+            alert("Suman: " + suma);
+
+            // Solicitar el tercer número al usuario
+            var numero3 = parseFloat(prompt("Ingresá un nuevo número:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(numero3)) {
+                numero3 = parseFloat(prompt("Entrada no válida. Por favor, ingresa un nuevo número:"));
+            }
+
+            // Calcular la multiplicación del tercer número por la suma anterior
+            var multiplicacion = suma * numero3;
+            
+            // Mostrar el resultado de la multiplicación en pantalla
+            alert("Multiplicación de la suma por el último número: " + multiplicacion);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = realizarOperaciones;
+    </script>
+</head>
+<body>
+</body>
+</html>

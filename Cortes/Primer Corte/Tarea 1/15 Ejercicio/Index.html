@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Comparar Palabras</title>
+    <script>
+        function compararPalabras() {
+            // Solicitar la primera palabra al usuario
+            var palabra1 = prompt("Una palabra:");
+            
+            // Verificar que la entrada no esté vacía
+            while (palabra1 === null || palabra1.trim() === "") {
+                palabra1 = prompt("Entrada no válida. Por favor, ingresa una palabra válida:");
+            }
+
+            // Solicitar la segunda palabra al usuario
+            var palabra2 = prompt("Otra palabra:");
+            
+            // Verificar que la entrada no esté vacía
+            while (palabra2 === null || palabra2.trim() === "") {
+                palabra2 = prompt("Entrada no válida. Por favor, ingresa otra palabra válida:");
+            }
+
+            // Comparar las dos palabras lexicográficamente
+            var esMenor = (palabra1 < palabra2);
+
+            // Mostrar el resultado en pantalla
+            alert(esMenor);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = compararPalabras;
+    </script>
+</head>
+<body>
+</body>
+</html>

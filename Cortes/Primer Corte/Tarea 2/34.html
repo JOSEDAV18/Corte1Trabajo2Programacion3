@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrado Hueco</title>
+    <style>
+        /* Estilo para mantener el formato de espacios y saltos de línea */
+        pre {
+            font-family: monospace; /* Usar una fuente monoespaciada para mantener el formato */
+            white-space: pre-wrap; /* Mantener los espacios en blanco y saltos de línea */
+        }
+    </style>
+</head>
+<body>
+    <h1>Cuadrado Hueco</h1>
+    <button onclick="dibujarCuadrado()">Dibujar Cuadrado Hueco</button>
+    <pre id="patron"></pre>
+
+    <script>
+        function dibujarCuadrado() {
+            var tamaño = 5; // Tamaño del cuadrado
+            var resultado = "";
+
+            for (var i = 0; i < tamaño; i++) {
+                for (var j = 0; j < tamaño; j++) {
+                    if (i === 0 || i === tamaño - 1 || j === 0 || j === tamaño - 1) {
+                        resultado += "*";
+                    } else {
+                        resultado += " ";
+                    }
+                }
+                resultado += "\n"; // Salto de línea para la siguiente fila
+            }
+
+            // Mostrar el patrón en el elemento <pre> con id "patron"
+            document.getElementById("patron").textContent = resultado;
+        }
+    </script>
+</body>
+</html>

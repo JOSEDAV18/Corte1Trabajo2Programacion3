@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Comparar Nombres</title>
+    <script>
+        function compararNombres() {
+            // Solicitar el nombre del usuario
+            var nombre1 = prompt("Tu nombre:");
+            
+            // Verificar que la entrada no esté vacía
+            while (nombre1 === null || nombre1.trim() === "") {
+                nombre1 = prompt("Entrada no válida. Por favor, ingresa tu nombre:");
+            }
+
+            // Solicitar el nombre de la otra persona
+            var nombre2 = prompt("Otro nombre:");
+            
+            // Verificar que la entrada no esté vacía
+            while (nombre2 === null || nombre2.trim() === "") {
+                nombre2 = prompt("Entrada no válida. Por favor, ingresa el nombre de la otra persona:");
+            }
+
+            // Obtener la primera y última letra de cada nombre
+            var primeraLetra1 = nombre1.charAt(0).toLowerCase();
+            var ultimaLetra1 = nombre1.charAt(nombre1.length - 1).toLowerCase();
+            var primeraLetra2 = nombre2.charAt(0).toLowerCase();
+            var ultimaLetra2 = nombre2.charAt(nombre2.length - 1).toLowerCase();
+
+            // Verificar si los nombres comienzan con la misma letra o terminan con la misma letra
+            var coincidePrimeraLetra = (primeraLetra1 === primeraLetra2);
+            var coincideUltimaLetra = (ultimaLetra1 === ultimaLetra2);
+
+            // Determinar el resultado final
+            var resultado = coincidePrimeraLetra || coincideUltimaLetra;
+
+            // Mostrar el resultado en pantalla
+            alert(resultado);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = compararNombres;
+    </script>
+</head>
+<body>
+</body>
+</html>

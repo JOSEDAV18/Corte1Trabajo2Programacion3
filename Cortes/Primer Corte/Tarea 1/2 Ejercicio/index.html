@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Números</title>
+</head>
+<body>
+    <h1>Programa de Suma</h1>
+    <form id="sumaForm">
+        <label for="decimal">Ingresa un número con decimales:</label><br>
+        <input type="text" id="decimal" name="decimal"><br><br>
+        
+        <label for="entero">Ingresa un número entero:</label><br>
+        <input type="text" id="entero" name="entero"><br><br>
+        
+        <input type="submit" value="Calcular Suma">
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("sumaForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obtener los valores ingresados por el usuario
+            let numeroDecimal = parseFloat(document.getElementById("decimal").value);
+            let numeroEntero = parseInt(document.getElementById("entero").value);
+
+            // Calcular la suma
+            let suma = numeroDecimal + numeroEntero;
+
+            // Mostrar el resultado en la página
+            document.getElementById("resultado").textContent = "El resultado de la suma es " + suma;
+        });
+    </script>
+</body>
+</html>

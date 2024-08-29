@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Concatenación de Palabras</title>
+    <script>
+        function concatenarPalabras() {
+            // Solicitar la primera palabra al usuario
+            var primeraPalabra = prompt("Primera palabra:");
+            
+            // Solicitar la segunda palabra al usuario
+            var segundaPalabra = prompt("Segunda palabra:");
+
+            // Concatenar las dos palabras con un espacio entre ellas
+            var resultado = primeraPalabra + " " + segundaPalabra;
+
+            // Mostrar el resultado en pantalla
+            alert(resultado);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = concatenarPalabras;
+    </script>
+</head>
+<body>
+</body>
+</html>

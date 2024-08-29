@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shows Musicales Vistos</title>
+    <script>
+        function verificarShows() {
+            // Solicitar al usuario que ingrese el número de shows vistos
+            var showsVistos = parseInt(prompt("Shows vistos en el último año:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(showsVistos) || showsVistos < 0) {
+                showsVistos = parseInt(prompt("Entrada no válida. Por favor, ingresa un número válido de shows vistos:"));
+            }
+
+            // Determinar si ha visto más de 3 shows
+            var masDeTresShows = showsVistos > 3;
+
+            // Mostrar el valor de verdad en pantalla
+            alert(masDeTresShows);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = verificarShows;
+    </script>
+</head>
+<body>
+</body>
+</html>

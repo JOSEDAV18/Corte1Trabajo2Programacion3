@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar de N a 1</title>
+</head>
+<body>
+    <h1>Contar de N a 1</h1>
+    <button onclick="contar()">Comenzar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function contar() {
+            // Solicitar al usuario que ingrese un número
+            var n = parseInt(prompt("Ingresa un número entero positivo:"));
+
+            // Verificar si la entrada es un número válido
+            if (isNaN(n) || n <= 0) {
+                document.getElementById("resultado").textContent = "Por favor, ingresa un número entero positivo válido.";
+                return;
+            }
+
+            var resultado = "";
+            while (n >= 1) {
+                resultado += n;
+                if (n > 1) { // Agregar un espacio entre los números, excepto después del último número
+                    resultado += " ";
+                }
+                n--;
+            }
+
+            // Mostrar el resultado
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>

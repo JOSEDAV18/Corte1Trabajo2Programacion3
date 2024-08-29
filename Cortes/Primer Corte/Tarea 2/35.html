@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piramide Izquierda</title>
+</head>
+<body>
+    <pre id="piramide"></pre>
+
+    <script>
+        function dibujarPiramide(tamaño) {
+            let piramide = '';
+
+            for (let i = 1; i <= tamaño; i++) {
+                for (let j = 1; j <= i; j++) {
+                    piramide += '*';
+                }
+                piramide += '\n'; // Nueva línea después de cada fila
+            }
+
+            return piramide;
+        }
+
+        // Definir el tamaño de la pirámide
+        const tamaño = 12;
+
+        // Obtener el elemento donde se mostrará la pirámide
+        const elemento = document.getElementById('piramide');
+
+        // Dibujar y mostrar la pirámide en el elemento
+        elemento.textContent = dibujarPiramide(tamaño);
+    </script>
+</body>
+</html>

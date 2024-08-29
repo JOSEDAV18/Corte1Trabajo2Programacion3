@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Nombre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Nombre</h1>
+    <label for="nombreInput">Tu nombre:</label>
+    <input type="text" id="nombreInput">
+    <button onclick="mostrarMensaje()">Enviar</button>
+    <p id="mensaje"></p>
+
+    <script>
+        function mostrarMensaje() {
+            // Obtener el valor del campo de texto
+            const nombre = document.getElementById('nombreInput').value;
+            
+            // Crear el mensaje con el nombre del usuario
+            const mensaje = `Has iniciado, ${nombre}`;
+            
+            // Mostrar el mensaje en el elemento <p> con id "mensaje"
+            document.getElementById('mensaje').textContent = mensaje;
+        }
+    </script>
+</body>
+</html>

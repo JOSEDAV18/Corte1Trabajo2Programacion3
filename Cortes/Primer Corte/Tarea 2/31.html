@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrado Lleno</title>
+</head>
+<body>
+    <pre id="cuadrado"></pre>
+
+    <script>
+        function dibujarCuadrado(size) {
+            let cuadrado = '';
+
+            for (let i = 0; i < size; i++) {
+                for (let j = 0; j < size; j++) {
+                    cuadrado += '*';
+                }
+                cuadrado += '\n'; // Nueva línea después de cada fila
+            }
+
+            return cuadrado;
+        }
+
+        // Definir el tamaño del cuadrado
+        const tamaño = 10;
+
+        // Obtener el elemento donde se mostrará el cuadrado
+        const elemento = document.getElementById('cuadrado');
+
+        // Dibujar y mostrar el cuadrado en el elemento
+        elemento.textContent = dibujarCuadrado(tamaño);
+    </script>
+</body>
+</html>

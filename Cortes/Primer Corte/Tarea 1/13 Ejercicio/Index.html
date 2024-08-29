@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Edad y Artículos Comprados</title>
+    <script>
+        function verificarCompra() {
+            // Solicitar la edad del usuario
+            var edad = parseInt(prompt("Tu edad:"), 10);
+            
+            // Verificar que la edad sea un número válido
+            while (isNaN(edad) || edad < 0) {
+                edad = parseInt(prompt("Entrada no válida. Por favor, ingresa una edad válida:"), 10);
+            }
+
+            // Solicitar la cantidad de artículos comprados
+            var articulosComprados = parseInt(prompt("Artículos comprados:"), 10);
+            
+            // Verificar que la cantidad de artículos sea un número válido
+            while (isNaN(articulosComprados) || articulosComprados < 0) {
+                articulosComprados = parseInt(prompt("Entrada no válida. Por favor, ingresa una cantidad válida de artículos comprados:"), 10);
+            }
+
+            // Determinar si el usuario es mayor de 18 años y compró más de 1 artículo
+            var esMayorYCompraMasDeUno = (edad > 18) && (articulosComprados > 1);
+
+            // Mostrar el resultado en pantalla
+            alert(esMayorYCompraMasDeUno);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = verificarCompra;
+    </script>
+</head>
+<body>
+</body>
+</html>

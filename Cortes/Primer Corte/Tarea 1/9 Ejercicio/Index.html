@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Carácter por Índice</title>
+    <script>
+        function mostrarCaracter() {
+            // Solicitar un texto al usuario
+            var texto = prompt("Ingresá un texto:");
+            
+            // Mostrar la primera letra del texto
+            var primeraLetra = texto.charAt(0);
+            alert("El carácter en primer lugar es: " + primeraLetra);
+            
+            // Solicitar un número positivo menor a la longitud del texto
+            var longitudTexto = texto.length;
+            var indice = parseInt(prompt("Ingresá un número positivo menor a " + longitudTexto + ":"));
+
+            // Verificar que el número esté en el rango correcto
+            while (isNaN(indice) || indice < 0 || indice >= longitudTexto) {
+                indice = parseInt(prompt("Número no válido. Ingresá un número positivo menor a " + longitudTexto + ":"));
+            }
+
+            // Mostrar el carácter en la posición dada por el índice
+            var caracter = texto.charAt(indice);
+            alert("El carácter en esa posición es: " + caracter);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = mostrarCaracter;
+    </script>
+</head>
+<body>
+</body>
+</html>

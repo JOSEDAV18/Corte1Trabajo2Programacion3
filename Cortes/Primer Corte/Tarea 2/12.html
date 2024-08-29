@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Mayúscula</title>
+</head>
+<body>
+    <h1>Verificar si la palabra empieza con una mayúscula</h1>
+    <label for="inputPalabra">Ingresa una palabra o frase:</label>
+    <input type="text" id="inputPalabra" placeholder="Escribe aquí">
+    <button onclick="verificarMayuscula()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarMayuscula() {
+            var palabra = document.getElementById("inputPalabra").value;
+
+            if (palabra.charAt(0) === palabra.charAt(0).toUpperCase()) {
+                document.getElementById("resultado").textContent = "La palabra empieza con una letra mayúscula.";
+            } else {
+                document.getElementById("resultado").textContent = "La palabra no empieza con una letra mayúscula.";
+            }
+        }
+    </script>
+</body>
+</html>

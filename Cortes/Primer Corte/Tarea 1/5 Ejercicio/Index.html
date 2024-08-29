@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conversión de Temperatura</title>
+    <script>
+        function convertirTemperatura() {
+            // Solicitar al usuario la temperatura en Fahrenheit
+            var fahrenheit = parseFloat(prompt("Ingresá una temperatura expresada en Fahrenheit:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(fahrenheit)) {
+                fahrenheit = parseFloat(prompt("Entrada no válida. Por favor, ingresa una temperatura válida en Fahrenheit:"));
+            }
+
+            // Convertir de Fahrenheit a Celsius
+            var celsius = (5/9) * (fahrenheit - 32);
+
+            // Mostrar el resultado en pantalla
+            alert("La temperatura en grados Celsius es: " + celsius);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = convertirTemperatura;
+    </script>
+</head>
+<body>
+</body>
+</html>

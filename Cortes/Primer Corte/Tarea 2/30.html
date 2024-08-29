@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Perfectos</title>
+</head>
+<body>
+    <h1>Generar Números Perfectos</h1>
+    <button onclick="generarNumerosPerfectos()">Generar Números Perfectos</button>
+    <p id="resultado"></p>
+
+    <script>
+        function generarNumerosPerfectos() {
+            // Solicitar al usuario que ingrese el número de números perfectos deseados
+            var N = parseInt(prompt("Ingresa el número de números perfectos que deseas generar:"));
+
+            // Verificar si la entrada es un número válido
+            if (isNaN(N) || N <= 0) {
+                document.getElementById("resultado").textContent = "Por favor, ingresa un número entero positivo válido.";
+                return;
+            }
+
+            var numerosPerfectos = [];
+            var num = 2; // Empezar a buscar números perfectos desde 2
+
+            while (numerosPerfectos.length < N) {
+                var sumaDivisores = 0;
+
+                // Encontrar la suma de los divisores propios
+                for (var i = 1; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        sumaDivisores += i;
+                        if (i !== 1 && i !== num / i) {
+                            sumaDivisores += num / i;
+                        }
+                    }
+                }
+
+                // Verificar si el número es perfecto
+                if (sumaDivisores === num) {
+                    numerosPerfectos.push(num);
+                }
+
+                num++;
+            }
+
+            // Mostrar los números perfectos encontrados
+            document.getElementById("resultado").textContent = "Los primeros " + N + " números perfectos son: " + numerosPerfectos.join(", ");
+        }
+    </script>
+</body>
+</html>

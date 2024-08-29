@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividir por 10</title>
+</head>
+<body>
+    <h1>Dividir un Número por 10</h1>
+    <div id="resultado"></div>
+
+    <script>
+        // Pedir al usuario un número
+        const numero = parseFloat(prompt("Introduce un número:"));
+
+        // Verificar si el número es válido
+        if (!isNaN(numero)) {
+            // Dividir el número por 10
+            const resultado = numero / 10;
+            // Mostrar el resultado en el HTML
+            document.getElementById('resultado').textContent = `El resultado de ${numero} dividido por 10 es ${resultado}.`;
+        } else {
+            // Mostrar un mensaje de error si el número no es válido
+            document.getElementById('resultado').textContent = "Por favor, introduce un número válido.";
+        }
+    </script>
+</body>
+</html>

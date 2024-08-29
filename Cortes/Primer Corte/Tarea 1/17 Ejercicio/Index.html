@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Valor Absoluto</title>
+    <script>
+        function calcularValorAbsoluto() {
+            // Solicitar al usuario que ingrese un número entero
+            var numero = parseInt(prompt("Número:"), 10);
+            
+            // Verificar que la entrada sea un número entero válido
+            while (isNaN(numero)) {
+                numero = parseInt(prompt("Entrada no válida. Por favor, ingresa un número entero válido:"), 10);
+            }
+
+            // Calcular el valor absoluto
+            var valorAbsoluto = Math.abs(numero);
+
+            // Mostrar el valor absoluto en pantalla
+            alert("Valor absoluto: " + valorAbsoluto);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = calcularValorAbsoluto;
+    </script>
+</head>
+<body>
+</body>
+</html>

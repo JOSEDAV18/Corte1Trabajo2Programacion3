@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Descuento del 15%</title>
+    <script>
+        function aplicarDescuento() {
+            // Solicitar un número al usuario
+            var numero = parseFloat(prompt("Ingresá un número:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(numero)) {
+                numero = parseFloat(prompt("Entrada no válida. Por favor, ingresa un número válido:"));
+            }
+
+            // Aplicar el descuento del 15%
+            numero -= numero * 0.15;
+
+            // Mostrar el resultado en pantalla
+            alert("Descontando el 15% queda: " + numero.toFixed(1));
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = aplicarDescuento;
+    </script>
+</head>
+<body>
+</body>
+</html>

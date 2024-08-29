@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Menor de Tres Números</title>
+    <script>
+        function encontrarMenor() {
+            // Solicitar el primer número al usuario
+            var numero1 = parseFloat(prompt("Primer número:"));
+            
+            // Verificar que la entrada sea un número válido
+            while (isNaN(numero1)) {
+                numero1 = parseFloat(prompt("Entrada no válida. Por favor, ingresa un número válido:"));
+            }
+
+            // Solicitar el segundo número al usuario
+            var numero2 = parseFloat(prompt("Segundo número:"));
+            
+            // Verificar que la entrada sea un número válido
+            while (isNaN(numero2)) {
+                numero2 = parseFloat(prompt("Entrada no válida. Por favor, ingresa un número válido:"));
+            }
+
+            // Solicitar el tercer número al usuario
+            var numero3 = parseFloat(prompt("Tercer número:"));
+            
+            // Verificar que la entrada sea un número válido
+            while (isNaN(numero3)) {
+                numero3 = parseFloat(prompt("Entrada no válida. Por favor, ingresa un número válido:"));
+            }
+
+            // Encontrar el menor de los tres números
+            var menor = Math.min(numero1, numero2, numero3);
+
+            // Mostrar el menor en pantalla
+            alert("Menor: " + menor);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = encontrarMenor;
+    </script>
+</head>
+<body>
+</body>
+</html>

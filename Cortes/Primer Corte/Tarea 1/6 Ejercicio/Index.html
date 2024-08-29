@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Promedio de Tres Números</title>
+    <script>
+        function calcularPromedio() {
+            // Solicitar el primer número al usuario
+            var numero1 = parseFloat(prompt("Primer número:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(numero1)) {
+                numero1 = parseFloat(prompt("Entrada no válida. Por favor, ingresa un número válido:"));
+            }
+
+            // Solicitar el segundo número al usuario
+            var numero2 = parseFloat(prompt("Segundo número:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(numero2)) {
+                numero2 = parseFloat(prompt("Entrada no válida. Por favor, ingresa un número válido:"));
+            }
+
+            // Solicitar el tercer número al usuario
+            var numero3 = parseFloat(prompt("Tercer número:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(numero3)) {
+                numero3 = parseFloat(prompt("Entrada no válida. Por favor, ingresa un número válido:"));
+            }
+
+            // Calcular el promedio de los tres números
+            var promedio = (numero1 + numero2 + numero3) / 3;
+
+            // Mostrar el resultado en pantalla
+            alert("El promedio de los tres es " + promedio.toFixed(1));
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = calcularPromedio;
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Consumo de Combustible</title>
+    <script>
+        function calcularConsumo() {
+            // Solicitar la cantidad de kilómetros recorridos
+            var kilometros = parseFloat(prompt("Kilómetros recorridos:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(kilometros) || kilometros <= 0) {
+                kilometros = parseFloat(prompt("Entrada no válida. Por favor, ingresa una cantidad válida de kilómetros recorridos:"));
+            }
+
+            // Solicitar la cantidad de litros de combustible gastados
+            var litros = parseFloat(prompt("Litros de combustible gastados:"));
+            
+            // Verificar si la entrada es un número válido
+            while (isNaN(litros) || litros <= 0) {
+                litros = parseFloat(prompt("Entrada no válida. Por favor, ingresa una cantidad válida de litros de combustible gastados:"));
+            }
+
+            // Calcular el consumo de combustible por kilómetro
+            var consumoPorKilometro = kilometros / litros;
+
+            // Mostrar el resultado en pantalla
+            alert("El consumo por kilómetro es de " + consumoPorKilometro.toFixed(1));
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = calcularConsumo;
+    </script>
+</head>
+<body>
+</body>
+</html>

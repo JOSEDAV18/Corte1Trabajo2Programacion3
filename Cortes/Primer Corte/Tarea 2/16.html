@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negar Expresiones Lógicas</title>
+    <style>
+        .container {
+            margin: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="a">a:</label>
+        <input type="checkbox" id="a" onclick="actualizarResultados()">
+        <label for="b">b:</label>
+        <input type="checkbox" id="b" onclick="actualizarResultados()">
+        
+        <p id="resultados"></p>
+    </div>
+
+    <script>
+        function actualizarResultados() {
+            // Obtener los valores de los checkboxes
+            var a = document.getElementById('a').checked;
+            var b = document.getElementById('b').checked;
+
+            // Negar las expresiones lógicas
+            var notA = !a;
+            var notB = !b;
+
+            // Evaluar las expresiones
+            var resultado1 = notA && notB;
+            var resultado2 = notA || notB;
+
+            // Mostrar los resultados
+            document.getElementById('resultados').innerHTML = `
+                <strong>Resultados:</strong><br>
+                !a && !b: ${resultado1}<br>
+                !a || !b: ${resultado2}
+            `;
+        }
+
+        // Inicializar resultados al cargar la página
+        window.onload = actualizarResultados;
+    </script>
+</body>
+</html>

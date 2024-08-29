@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinar Año Bisiesto</title>
+</head>
+<body>
+    <script>
+        // Función para determinar si un año es bisiesto
+        function esAñoBisiesto(año) {
+            // Un año es bisiesto si es divisible por 4
+            // pero no divisible por 100, excepto si es divisible por 400
+            return (año % 4 === 0 && año % 100 !== 0) || (año % 400 === 0);
+        }
+
+        // Solicitar al usuario el año
+        var año = prompt("Ingrese un año:");
+
+        // Convertir la entrada a un número
+        año = parseInt(año);
+
+        // Verificar si la entrada es un número
+        if (!isNaN(año)) {
+            // Determinar si el año es bisiesto
+            if (esAñoBisiesto(año)) {
+                alert(año + " es un año bisiesto.");
+            } else {
+                alert(año + " no es un año bisiesto.");
+            }
+        } else {
+            alert("Por favor, ingrese un número válido.");
+        }
+    </script>
+</body>
+</html>

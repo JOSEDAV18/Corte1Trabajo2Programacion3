@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formato de Fecha</title>
+    <script>
+        function formatearFecha() {
+            // Solicitar al usuario que ingrese una fecha en formato DDMMAAAA
+            var fechaEntrada = prompt("Fecha en formato DDMMAAAA:");
+
+            // Verificar que la entrada tenga exactamente 8 dígitos
+            while (isNaN(fechaEntrada) || fechaEntrada.length !== 8) {
+                fechaEntrada = prompt("Entrada no válida. Por favor, ingresa una fecha válida en formato DDMMAAAA:");
+            }
+
+            // Extraer los componentes de la fecha
+            var dia = fechaEntrada.substring(0, 2);
+            var mes = fechaEntrada.substring(2, 4);
+            var anio = fechaEntrada.substring(4);
+
+            // Formatear la fecha en DD/MM/AAAA
+            var fechaFormateada = dia + "/" + mes + "/" + anio;
+
+            // Mostrar el resultado en pantalla
+            alert(fechaFormateada);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = formatearFecha;
+    </script>
+</head>
+<body>
+</body>
+</html>

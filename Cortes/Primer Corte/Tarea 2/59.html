@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Promedio en Rango</title>
+</head>
+<body>
+    <h1>Calcular Promedio dentro de un Rango</h1>
+    <button onclick="calcularYMostrarPromedio()">Calcular Promedio</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularPromedio(array, inicio, fin) {
+            // Verificar si el rango es válido
+            if (inicio < 0 || fin >= array.length || inicio > fin) {
+                return "Rango inválido";
+            }
+
+            var suma = 0;
+            var cantidad = 0;
+
+            for (var i = inicio; i <= fin; i++) {
+                suma += array[i];
+                cantidad++;
+            }
+
+            return cantidad > 0 ? (suma / cantidad).toFixed(2) : "No hay elementos en el rango";
+        }
+
+        function calcularYMostrarPromedio() {
+            // Definir el array de ejemplo
+            var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            var inicio = 2; // Punto de inicio del rango (índice)
+            var fin = 5;    // Punto de fin del rango (índice)
+
+            // Llamar a la función calcularPromedio
+            var promedio = calcularPromedio(array, inicio, fin);
+
+            // Mostrar el resultado en el div con id "resultado"
+            document.getElementById("resultado").innerText = "El promedio es: " + promedio;
+        }
+    </script>
+</body>
+</html>

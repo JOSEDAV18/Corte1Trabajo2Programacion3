@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Persona</title>
+</head>
+<body>
+    <h1>Detalles de la Persona</h1>
+    <div id="resultado"></div>
+
+    <script>
+        // Definir el objeto persona
+        const persona = {
+            nombre: "Juan",
+            edad: 20,
+
+            // Método para determinar la categoría de edad
+            determinarCategoria: function() {
+                let categoria;
+                if (this.edad < 13) {
+                    categoria = `${this.nombre} es niño.`;
+                } else if (this.edad < 18) {
+                    categoria = `${this.nombre} es adolescente.`;
+                } else {
+                    categoria = `${this.nombre} es adulto.`;
+                }
+                return categoria;
+            },
+
+            // Método para determinar si es mayor de edad
+            esMayorDeEdad: function() {
+                return this.edad >= 18;
+            }
+        };
+
+        // Obtener el elemento donde se mostrará el resultado
+        const resultadoDiv = document.getElementById('resultado');
+
+        // Mostrar la categoría de edad y si es mayor de edad
+        const categoria = persona.determinarCategoria();
+        const mayorDeEdad = persona.esMayorDeEdad() ? "es mayor de edad." : "no es mayor de edad.";
+
+        resultadoDiv.innerHTML = `
+            <p>${categoria}</p>
+            <p>${persona.nombre} ${mayorDeEdad}</p>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Cantidad de Caracteres</title>
+    <script>
+        function verificarCantidadCaracteres() {
+            // Solicitar una cadena de texto al usuario
+            var texto = prompt("Ingresá una frase:");
+
+            // Verificar que la entrada no esté vacía
+            while (texto === null || texto.trim() === "") {
+                texto = prompt("Entrada no válida. Por favor, ingresa una frase no vacía:");
+            }
+
+            // Obtener la cantidad de caracteres en la cadena
+            var cantidadCaracteres = texto.length;
+
+            // Determinar si la cantidad de caracteres es impar
+            var esImpar = (cantidadCaracteres % 2 !== 0);
+
+            // Mostrar el resultado en pantalla
+            alert(esImpar);
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = verificarCantidadCaracteres;
+    </script>
+</head>
+<body>
+</body>
+</html>
